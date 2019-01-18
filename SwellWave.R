@@ -29,8 +29,8 @@ Swell <- data.frame("time" = seq(from = ISOdatetime(year = 2014, month = 01, day
 # The data ontained in Swell is security concern.
 
 ##### Load Marine Cwbuoies from Meteorological office---------------------------------------------
-# grp : êµ¬ë£¡í¬
-path <- "data/íŒŒê³ ë¶€ì´"
+# grp : êµ¬ë£¡?¬
+path <- "data/?ŒŒê³ ë?€?´"
 cwbuoies <- list.files(path, pattern = "csv")
 for (i in seq_along(cwbuoies)) {
   X <- fread(paste(path, cwbuoies[i], sep = "/"),
@@ -43,8 +43,8 @@ for (i in seq_along(cwbuoies)) {
 };rm(path, cwbuoies, i, X)
 
 ##### Load Marine Buoies from Meteorological office---------------------------------------------
-# ph : í¬í•­
-path <- "data/í•´ì–‘ê¸°ìƒë¶€ì´"
+# ph : ?¬?•­
+path <- "data/?•´?–‘ê¸°ìƒë¶€?´"
 buoies <- list.files(path, pattern = "csv")
 for (i in seq_along(buoies)) {
   X <- fread(paste(path, buoies[i], sep = "/"),
@@ -295,7 +295,7 @@ model.qda <- train(swell ~ .,
 
 pred.qda <- predict(model.qda, Valid.rep, type = "prob")[, 2]
 
-##### Navie Bayes --------------------------------------------------------------------------------
+##### Naive Bayes --------------------------------------------------------------------------------
 # modelLookup('naive_bayes')
 laplace <- c(0, 10 ^ seq(2, -2, length = 11))
 usekernel <- c(TRUE, FALSE)
